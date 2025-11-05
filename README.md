@@ -81,3 +81,177 @@ Create a file called **`index.html`** and add:
   <script src="script.js"></script>
 </body>
 </html>
+
+🎨 Step 2: Add Styling with CSS
+
+Create a file named style.css and paste this:
+
+:root {
+  --bg: #f8f8f8;
+  --text: #222;
+  --primary: #007aff;
+  --button-bg: #eaeaea;
+}
+
+.dark {
+  --bg: #1e1e1e;
+  --text: #f8f8f8;
+  --button-bg: #333;
+  --primary: #0a84ff;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.calculator {
+  display: flex;
+  gap: 20px;
+  background: var(--bg);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.calc-left {
+  padding: 20px;
+}
+
+.display {
+  background: var(--button-bg);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.prev-operand {
+  font-size: 1rem;
+  opacity: 0.6;
+}
+
+.curr-operand {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 70px);
+  gap: 10px;
+}
+
+button {
+  background: var(--button-bg);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.3s;
+}
+
+button:hover {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.05);
+}
+
+.calc-right {
+  background: var(--button-bg);
+  padding: 15px;
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.history {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-switch button {
+  width: 100%;
+  background: var(--primary);
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+
+📝 Explanation:
+This gives a macOS-inspired UI, light/dark theme variables, and animated transitions between themes.
+
+💡 Step 3: Add Logic with JavaScript
+
+Create script.js and add your calculator’s logic (the MDAS-based version you sent earlier).
+
+Example:
+
+// JavaScript logic for Calculator (MDAS + Pagination + Theme)
+class Calculator {
+  // ... (paste your fixed JS code here)
+}
+
+const calculator = new Calculator(
+  document.getElementById("prevOperand"),
+  document.getElementById("currOperand")
+);
+
+// event listeners setup...
+
+
+🧩 Explanation:
+This script:
+
+Handles MDAS order (multiplication/division before addition/subtraction)
+
+Saves history with pagination (5 per page)
+
+Includes animated dark/light theme switcher
+
+Persists settings with localStorage
+
+🌗 Step 4: Add Theme Animation
+
+The CSS transition and JS toggle (html.classList.toggle('dark')) make the theme switch smooth when switching between light/dark.
+
+✅ You’re Done!
+
+You now have a fully functional macOS-style calculator that’s:
+
+Responsive
+
+Stylish
+
+Functional (with MDAS logic)
+
+Saves your history
+
+Open index.html in your browser and start calculating!
+
+👨‍💻 Author
+
+Mark Julius P. Bongalbal
+📍 Bulan, Sorsogon
+📧 send2hire.mark@gmail.com
+
+🎓 Sorsogon State University (BSIT 2022–2027)
