@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>macOS Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Calculator Section -->
+      <div class="calculator-panel">
+        <!-- Window Header -->
+        <div class="window-header">
+          <div class="window-controls">
+            <span class="control-dot red"></span>
+            <span class="control-dot yellow"></span>
+            <span class="control-dot green"></span>
+          </div>
+          <span class="window-title">Calculator</span>
+          <div class="theme-toggle">
+            <button id="themeBtn" class="theme-btn">
+              <svg
+                class="sun-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <svg
+                class="moon-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path
+                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Display -->
+        <div class="display-area">
+          <div class="display">
+            <div class="previous-operand" id="prevOperand"></div>
+            <div class="current-operand" id="currOperand">0</div>
+          </div>
+        </div>
+
+        <!-- Buttons Grid -->
+        <div class="buttons-grid">
+          <button class="btn btn-function" data-action="clear">C</button>
+          <button class="btn btn-function" data-action="delete">DEL</button>
+          <button class="btn btn-operator" data-operator="/">÷</button>
+          <button class="btn btn-operator" data-operator="*">×</button>
+
+          <button class="btn btn-number" data-number="7">7</button>
+          <button class="btn btn-number" data-number="8">8</button>
+          <button class="btn btn-number" data-number="9">9</button>
+          <button class="btn btn-operator" data-operator="-">−</button>
+
+          <button class="btn btn-number" data-number="4">4</button>
+          <button class="btn btn-number" data-number="5">5</button>
+          <button class="btn btn-number" data-number="6">6</button>
+          <button class="btn btn-operator" data-operator="+">+</button>
+
+          <button class="btn btn-number" data-number="1">1</button>
+          <button class="btn btn-number" data-number="2">2</button>
+          <button class="btn btn-number" data-number="3">3</button>
+          <button class="btn btn-equals" data-action="equals">=</button>
+
+          <button class="btn btn-number" data-number="0">0</button>
+          <button class="btn btn-number" data-number=".">.</button>
+        </div>
+      </div>
+
+      <!-- History Section -->
+      <div class="history-panel">
+        <div class="history-header">
+          <h2>History</h2>
+          <button id="clearHistoryBtn" class="clear-btn">Clear All</button>
+        </div>
+        <div class="history-list" id="historyList">
+          <p class="empty-state">No calculations yet</p>
+        </div>
+        <div class="history-pagination">
+          <button id="prevPageBtn" class="pagination-btn">←</button>
+          <span id="pageInfo" class="page-info">1 / 1</span>
+          <button id="nextPageBtn" class="pagination-btn">→</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
